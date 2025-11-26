@@ -1,0 +1,53 @@
+.zodiac-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7e8ff, #ffd6ef);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.zodiac-title {
+  font-size: 32px;
+  color: #6c3baa;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.zodiac-select-box {
+  width: 80%;
+  max-width: 350px;
+  margin-bottom: 30px;
+}
+
+.zodiac-dropdown {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  background-color: white;
+  border: 2px solid #d2a8ff;
+  border-radius: 12px;
+  color: #6c3baa;
+  outline: none;
+}
+
+.zodiac-dropdown:hover {
+  border-color: #b37aff;
+}
+
+.zodiac-next-button {
+  background-color: #d9a7ff;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.zodiac-next-button:hover {
+  background-color: #b87cff;
+}

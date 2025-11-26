@@ -1,0 +1,269 @@
+/* Shared styles for all dashboard sections */
+
+.section-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(33, 150, 243, 0.15);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(66, 165, 245, 0.2);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #1565c0;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-btn {
+    padding: 12px 24px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.section-btn:hover {
+    background: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+/* Mood Tracker Styles */
+.mood-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mood-question {
+    color: #1565c0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.mood-options {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.mood-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 80px;
+}
+
+.mood-option:hover {
+    background: rgba(33, 150, 243, 0.1);
+}
+
+.mood-option.selected {
+    background: rgba(33, 150, 243, 0.15);
+    border-color: #2196f3;
+    transform: scale(1.1);
+}
+
+.mood-emoji {
+    font-size: 3rem;
+}
+
+.mood-label {
+    color: #1565c0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.mood-save-btn {
+    align-self: center;
+    margin-top: 12px;
+}
+
+.mood-note-section {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mood-note-label {
+    color: #1565c0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.mood-note-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(66, 165, 245, 0.3);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #1565c0;
+    background: rgba(255, 255, 255, 0.9);
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.mood-note-input:focus {
+    outline: none;
+    border-color: #2196f3;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.mood-note-input::placeholder {
+    color: #90caf9;
+}
+
+/* Success Notification - Top Position */
+.mood-success-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(76, 175, 80, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2000;
+    animation: slideDown 0.4s ease;
+    min-width: 280px;
+}
+
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.notification-content h3 {
+    margin: 0 0 2px 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.notification-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    opacity: 0.95;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Horoscope Detailed Styles */
+.horoscope-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.horoscope-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.horoscope-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+}
+
+.sun-card {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.moon-card {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.1), rgba(112, 128, 144, 0.1));
+    border-color: rgba(192, 192, 192, 0.3);
+}
+
+.sign-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 10px 0;
+    background: linear-gradient(45deg, #1565c0, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sign-desc {
+    color: #546e7a;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.planet-detail {
+    font-size: 0.85rem;
+    color: #78909c;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 4px 8px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.horoscope-extra-details {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.horoscope-loading,
+.horoscope-error {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #1565c0;
+}

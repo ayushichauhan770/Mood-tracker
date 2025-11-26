@@ -1,0 +1,37 @@
+.personality-test-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5e6ff, #ffe6f0); /* Lavender-Pink Gradient */
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.question {
+  font-size: 2rem;
+  color: #6b3fa0; /* Soft lavender text */
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 25px;
+}
+
+.option-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.option-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(107, 63, 160, 0.3);
+}

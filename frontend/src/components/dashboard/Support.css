@@ -1,0 +1,257 @@
+.support-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.support-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.support-header h2 {
+    font-size: 2rem;
+    color: var(--text-primary, #333);
+    margin-bottom: 10px;
+}
+
+.support-header p {
+    color: var(--text-secondary, #757575);
+    font-size: 1.1rem;
+}
+
+.support-section {
+    margin-bottom: 40px;
+}
+
+.support-section h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary, #333);
+    margin-bottom: 20px;
+    border-left: 4px solid #2196f3;
+    padding-left: 12px;
+}
+
+/* FAQ List */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: var(--card-bg, white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e0e0e0);
+    transition: all 0.3s ease;
+}
+
+.faq-item.active {
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.1);
+    border-color: #2196f3;
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: var(--bg-primary, white);
+}
+
+.faq-question h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-primary, #333);
+}
+
+.faq-toggle {
+    font-size: 1.5rem;
+    color: #2196f3;
+    font-weight: bold;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: var(--bg-secondary, #f9f9f9);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    /* Adjust as needed */
+    border-top: 1px solid var(--border-color, #f0f0f0);
+}
+
+.faq-answer p {
+    padding: 20px;
+    margin: 0;
+    color: var(--text-secondary, #616161);
+    line-height: 1.6;
+}
+
+/* Contact Support */
+.contact-card {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.contact-card p {
+    color: #0d47a1;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-btn.email {
+    background: white;
+    color: #1976d2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn.chat {
+    background: rgba(255, 255, 255, 0.5);
+    color: #546e7a;
+    cursor: not-allowed;
+}
+
+/* Feedback Form */
+.feedback-form-card {
+    background: var(--card-bg, white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+}
+
+.type-selector {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.type-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 20px;
+    background: var(--bg-primary, white);
+    color: var(--text-secondary, #757575);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-btn.active {
+    background: #2196f3;
+    color: white;
+    border-color: #2196f3;
+}
+
+.rating-stars {
+    font-size: 2.5rem;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.star {
+    margin-right: 8px;
+    transition: color 0.2s;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border-color, #e0e0e0);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    background: var(--bg-primary, white);
+    color: var(--text-primary, #333);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2196f3;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #43a047;
+}
+
+/* Success State */
+.feedback-success {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.success-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: bounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
