@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI)
 // Middleware
 const allowedOrigins = [
   /^http:\/\/localhost:\d+$/, // Allow any localhost port for development
-  'https://mood-tracker-frontend.onrender.com', // Deployed frontend
+  /^https:\/\/.*\.onrender\.com$/, // Allow any Render deployment
   process.env.FRONTEND_URL // Additional frontend URL from env
 ].filter(Boolean);
 
