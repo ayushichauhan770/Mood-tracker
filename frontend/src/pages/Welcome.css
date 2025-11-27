@@ -1,87 +1,21 @@
-/* Overall background */
+/* Clean Minimal Welcome Page - Blue & White Theme */
+
 .wel-wrap {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  background: linear-gradient(135deg,
-      #e3f2fd 0%,
-      #ffffff 50%,
-      #bbdefb 100%);
-  padding: 20px;
+  justify-content: center;
+  background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+  padding: 2rem 1rem;
 }
 
-/* Card */
-.wel-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  padding: 50px 35px;
-  border-radius: 22px;
-  width: 90%;
-  max-width: 420px;
+.wel-content {
+  max-width: 480px;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 12px 40px rgba(26, 35, 126, 0.2);
-  animation: fadeIn 0.7s ease;
-  border: 1px solid rgba(66, 165, 245, 0.3);
+  animation: fadeIn 0.6s ease;
 }
 
-/* Title */
-.wel-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #1a237e;
-}
-
-.wel-sub {
-  font-size: 15px;
-  color: #5c6bc0;
-  margin-bottom: 35px;
-}
-
-/* Button Container */
-.wel-btn-box {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Buttons */
-.wel-btn {
-  padding: 14px;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-/* Sign Up button */
-.signup-btn {
-  background: #1976d2;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
-}
-
-.signup-btn:hover {
-  background: #1565c0;
-  transform: translateY(-2px);
-}
-
-/* Login button */
-.login-btn {
-  background: #64b5f6;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
-}
-
-.login-btn:hover {
-  background: #42a5f5;
-  transform: translateY(-2px);
-}
-
-/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -91,5 +25,113 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.wel-logo-container {
+  margin-bottom: 2rem;
+}
+
+.wel-logo {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.wel-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 0.75rem;
+}
+
+.wel-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.wel-cta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wel-btn {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.wel-btn-primary {
+  background: #2196f3;
+  color: white;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.wel-btn-primary:hover {
+  background: #1976d2;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+  transform: translateY(-1px);
+}
+
+.wel-btn-secondary {
+  background: white;
+  color: #2196f3;
+  border: 2px solid #2196f3;
+}
+
+.wel-btn-secondary:hover {
+  background: #f5f5f5;
+}
+
+.wel-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.wel-feature-card {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.wel-feature-card h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .wel-title {
+    font-size: 2rem;
+  }
+
+  .wel-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .wel-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
   }
 }

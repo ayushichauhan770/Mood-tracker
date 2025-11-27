@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Community.css';
+import CommunityChat from './CommunityChat';
 
 const Community = () => {
     const [activeView, setActiveView] = useState('explore');
@@ -7,6 +8,7 @@ const Community = () => {
     const [likedPosts, setLikedPosts] = useState(new Set());
     const [savedPosts, setSavedPosts] = useState(new Set());
     const [showCreatePost, setShowCreatePost] = useState(false);
+    const [selectedCommunity, setSelectedCommunity] = useState(null);
 
     // Sample communities data with gradient colors
     const communities = [
@@ -167,6 +169,20 @@ const Community = () => {
         });
     };
 
+    const handleJoinCommunity = (community) => {
+        setSelectedCommunity(community);
+        setActiveView('chat');
+    };
+
+    if (activeView === 'chat' && selectedCommunity) {
+        return (
+            <CommunityChat
+                community={selectedCommunity}
+                onBack={() => setActiveView('explore')}
+            />
+        );
+    }
+
     if (activeView === 'explore') {
         return (
             <div className="community-container">
@@ -226,7 +242,11 @@ const Community = () => {
                                             <span className="stat-value">{community.posts}</span>
                                         </div>
                                     </div>
-                                    <button className="join-button" style={{ background: community.gradient }}>
+                                    <button
+                                        className="join-button"
+                                        style={{ background: community.gradient }}
+                                        onClick={() => handleJoinCommunity(community)}
+                                    >
                                         <span>Join Community</span>
                                         <span className="join-arrow">→</span>
                                     </button>

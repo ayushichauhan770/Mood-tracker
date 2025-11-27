@@ -7,18 +7,23 @@ export default function PersonalityIntro() {
 
   return (
     <div className="pi-wrap">
-      <div className="pi-card">
-        <h1 className="pi-title">Let’s Get to Know You 🤍</h1>
-        <p className="pi-desc">
-          Before we personalize your Mood Tracker experience,
-          we have a small fun personality test for you.
+      <div className="pi-content">
+        <div className="pi-icon">🧩</div>
+        <h1 className="pi-title">Discover Your Personality</h1>
+        <p className="pi-subtitle">
+          A quick 10-question visual test to personalize your experience.
+          Choose your first instinct for the most accurate results.
         </p>
 
-        <button className="pi-btn" onClick={() => {
+        <button className="pi-btn-primary" onClick={() => {
           localStorage.removeItem('personality-test-responses');
           nav("/personality-test-page-1");
         }}>
-          Continue
+          Start  Test
+        </button>
+
+        <button className="pi-btn-skip" onClick={() => nav("/zodiacsign")}>
+          Skip for now
         </button>
       </div>
     </div>
