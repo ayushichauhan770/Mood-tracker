@@ -11,17 +11,39 @@ dotenv.config();
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log("MongoDB Connected"))
-.catch(err => console.log(err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => {
+    console.error("MongoDB Connection Error:", err);
+    process.exit(1);
+  });
 
 
 // Middleware
+const allowedOrigins = [
+  /^http:\/\/localhost:\d+$/, // Allow any localhost port for development
+  'https://mood-tracker-frontend.onrender.com', // Deployed frontend
+  process.env.FRONTEND_URL // Additional frontend URL from env
+].filter(Boolean);
+
 app.use(cors({
-  origin: /^http:\/\/localhost:\d+$/, // Allow any localhost port
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    const isAllowed = allowedOrigins.some(allowed => {
+      if (allowed instanceof RegExp) {
+        return allowed.test(origin);
+      }
+      return allowed === origin;
+    });
+
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 app.use(express.json());
