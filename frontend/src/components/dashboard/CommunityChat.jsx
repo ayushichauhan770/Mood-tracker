@@ -29,18 +29,19 @@ const CommunityChat = ({ community, onBack }) => {
             isUser: true
         };
 
+        const input = newMessage;
         setMessages(prev => [...prev, userMsg]);
         setNewMessage("");
         setLoading(true);
 
         try {
-            const response = await fetch('https://mood-tracker-backend-p4lb.onrender.com', {
+            const response = await fetch('https://mood-tracker-backend-p4lb.onrender.com/api/community/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     communityName: community.name,
-                    message: userMsg.text,
-                    history: messages.slice(-5) // Send last 5 messages for context
+                    message: input,
+                    history: messages
                 })
             });
 

@@ -24,7 +24,7 @@ const Horoscope = () => {
     const generateBigThreeAnalysis = async (sun, moon, birthDetails) => {
         if (!sun || !moon) return;
         try {
-            const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com", {
+            const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com/api/ai/ask", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -48,7 +48,7 @@ const Horoscope = () => {
     const generateCompatibilityAnalysis = async (mySign, partnerSign) => {
         setReadingLoading(true);
         try {
-            const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com", {
+            const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com/api/ai/ask", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -57,7 +57,7 @@ const Horoscope = () => {
                     1. A compatibility percentage (0-100).
                     2. A short, insightful description of their dynamic.
                     3. One tip for making it work.
-                    Format as JSON with keys: score, description, tip.`
+                    Format as JSON with keys: score, description,tip.`
                 })
             });
             const data = await res.json();
@@ -81,7 +81,7 @@ const Horoscope = () => {
             }
 
             try {
-                const userRes = await fetch(`/https://mood-tracker-backend-p4lb.onrender.com${userId}`);
+                const userRes = await fetch(`https://mood-tracker-backend-p4lb.onrender.com/api/user/${userId}`);
                 const userData = await userRes.json();
 
                 if (!userData.birthdate || !userData.birthTime || !userData.birthLocation) {
@@ -130,7 +130,7 @@ const Horoscope = () => {
         if (!sign) return;
         setReadingLoading(true);
         try {
-            const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com", {
+            const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com/api/ai/ask", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
