@@ -5,7 +5,7 @@ const API_CONFIG = {
     // Use 'local' for local testing, 'production' for deployed backend
     mode: 'local', // Change to 'production' when deploying frontend
 
-    local: 'http://localhost:5000',
+    local: 'https://mood-tracker-backend-p4lb.onrender.com',
     production: 'https://mood-tracker-backend-p4lb.onrender.com'
 };
 
