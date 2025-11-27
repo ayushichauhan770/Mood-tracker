@@ -34,7 +34,7 @@ const ZodiacSignPage = ({ onNext }) => {
   const saveZodiac = async (sign) => {
   const userId = localStorage.getItem("userId"); // stored after signup
 
-  const res = await fetch("http://localhost:5000/api/user/save-zodiac", {
+  const res = await fetch("https://mood-tracker-backend-p4lb.onrender.com/api/user/save-zodiac", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, zodiacSign: sign })

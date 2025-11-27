@@ -7,7 +7,7 @@ function AIChat() {
 
   const askAI = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/ai/ask", {
+      const res = await axios.post("https://mood-tracker-backend-p4lb.onrender.com/api/ai/ask", {
         question: question,
       });
 

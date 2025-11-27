@@ -15,7 +15,7 @@ const PersonalityTestPage10 = () => {
   const savePersonality = async (answers) => {
   const userId = localStorage.getItem("userId");
 
-  await fetch("http://localhost:5000/api/user/save-personality", {
+  await fetch("https://mood-tracker-backend-p4lb.onrender.com/api/user/save-personality", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, personalityAnswers: answers })

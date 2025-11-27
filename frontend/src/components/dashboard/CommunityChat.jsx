@@ -34,7 +34,7 @@ const CommunityChat = ({ community, onBack }) => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/api/community/chat', {
+            const response = await fetch('https://mood-tracker-backend-p4lb.onrender.com', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
